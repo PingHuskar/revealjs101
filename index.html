@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/solarized.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style type="text/css">
+			.make-it-pop {
+  filter: drop-shadow(0 0 10px purple);
+}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<div class="reveal">
+				  <div class="slides">
+				    <section data-state="make-it-pop">First</section>
+				    <section><h2>Stretch Example</h2>
+<img class="r-stretch" src="https://revealjs.com/images/slides-symbol-512x512.png">
+<p>Image byline</p></section>
+				    <section>Slide 1</section>
+<section>Slide 2</section>
+<section data-visibility="uncounted">Slide 3</section>
+				    <section><div class="r-stack">
+  <img class="fragment" src="https://placekitten.com/450/300" width="450" height="300">
+  <img class="fragment" src="https://placekitten.com/300/450" width="300" height="450">
+  <img class="fragment" src="https://placekitten.com/400/400" width="400" height="400">
+</div></section>
+				    <section><pre><code><script type="text/template">
+sealed class Either<out A, out B> {
+  data class Left<out A>(val a: A) : Either<A, Nothing>()
+  data class Right<out B>(val b: B) : Either<Nothing, B>()
+}
+</script></code></pre></section>
+				    <section>
+				      <section>Vertical Slide 1</section>
+				      <section>Vertical Slide 2</section>
+				    </section>
+				    <section><span class="fragment fade-in">
+  <span class="fragment highlight-red fade-in">
+  <span class="fragment highlight-green">
+    <span class="fragment fade-out">
+      Fade in > Turn red > Fade out
+    </span></span>
+  </span>
+</span></section>
+				    <section>Final Slide</section>
+				  </div>
+				</div>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				autoPlayMedia: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+			Reveal.on( 'make-it-pop', () => {
+			  console.log('✨');
+			} );
+			Reveal.configure({
+  keyboard: {
+    27: () => { console.log('esc') }, // do something custom when ESC is pressed
+    32: 'next', // go to the next slide when the ENTER key is pressed
+    13: 'prev' // don't do anything when SPACE is pressed (i.e. disable a reveal.js default binding)
+  }
+});
+		</script>
+	</body>
+</html>
